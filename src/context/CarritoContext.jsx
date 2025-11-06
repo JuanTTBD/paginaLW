@@ -17,6 +17,7 @@ export function CarritoProvider({ children }) {
             : p
         );
       }
+      
       // Si no existe, agregamos con cantidad 1
       return [...prev, { ...producto, cantidad: 1 }];
     });
