@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import ProductoCard from "../components/ProductoCard";
 import "../styles/Productos.css";
 
+
 function Productos() {
   useEffect(() => {
     const items = document.querySelectorAll(".producto-card, .section-title");

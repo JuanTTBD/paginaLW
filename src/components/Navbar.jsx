@@ -24,7 +24,6 @@ export default function Navbar() {
           {/* 📜 Menú derecha */}
           <ul className="nav-links right elegant-font">
             <li><Link to="/" className="white-text nav-item">Inicio</Link></li>
-            <li><Link to="/galeria" className="white-text nav-item">Galería</Link></li>
             <li><Link to="/productos" className="white-text nav-item">Productos</Link></li>
             <li><Link to="/nosotros" className="white-text nav-item">Nosotros</Link></li>
             <li><Link to="/contacto" className="white-text nav-item">Contacto</Link></li>
@@ -44,7 +43,6 @@ export default function Navbar() {
       <ul className="sidenav nav-mobile elegant-font" id="mobile-demo">
         <li><Link to="/">Inicio</Link></li>
         <li><Link to="/productos">Productos</Link></li>
-        <li><Link to="/galeria">Galería</Link></li>
         <li><Link to="/nosotros">Nosotros</Link></li>
         <li><Link to="/contacto">Contacto</Link></li>
         {location.pathname === "/productos" && (

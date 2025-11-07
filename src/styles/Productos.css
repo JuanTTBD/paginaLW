@@ -1,33 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@600;800&display=swap');
 
 .productos-section {
-  padding: 60px 0;
+  padding: 80px 0;
   text-align: center;
+  max-width: 1300px;
+  margin: auto;
 }
 
-/* === TITULOS CON ANIMACIÓN === */
+/* === TITULOS ELEGANTES === */
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  font-size: 2.3rem;
+  font-weight: 700;
+  font-size: 2.6rem;
   color: var(--color-principal);
   letter-spacing: 1.5px;
-  margin-bottom: 40px;
+  margin-bottom: 55px;
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease;
+  transform: translateY(28px);
+  transition: all 0.9s ease;
   position: relative;
 }
 
 .section-title::after {
   content: "";
   display: block;
-  width: 80px;
-  height: 3px;
+  width: 65px;
+  height: 2px;
   background: var(--color-acento);
-  margin: 12px auto 0;
-  border-radius: 2px;
-  transition: width 0.5s ease;
+  margin: 14px auto 0;
+  transition: width 0.6s ease;
 }
 
 .section-title.visible {
@@ -36,36 +38,28 @@
 }
 
 .section-title.visible::after {
-  width: 140px;
+  width: 120px;
 }
 
-/* === GRILLA DE PRODUCTOS === */
+/* === GRILLA === */
 .productos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-bottom: 60px;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2.3rem;
+  padding: 0 25px;
   justify-items: center;
 }
 
-/* === EFECTO CORTINA DE ENTRADA === */
+/* === ESTILO TARJETAS === */
 .producto-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px 20px 28px;
+  transition: 0.5s ease;
   opacity: 0;
-  transform: translateY(60px);
-  transition: all 1.2s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.producto-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.4), transparent 100%);
-  transform: translateX(-100%);
-  transition: transform 0.8s ease-in-out;
-  z-index: 2;
+  transform: translateY(55px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  filter: saturate(0.95);
 }
 
 .producto-card.visible {
@@ -73,43 +67,50 @@
   transform: translateY(0);
 }
 
-.producto-card.visible::before {
-  transform: translateX(100%);
-}
-
-/* HOVER ANIMADO */
+/* Hover elegante */
 .producto-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.27);
+  filter: saturate(1.1);
 }
 
-.producto-card:hover::before {
-  transform: translateX(100%);
-  background: linear-gradient(90deg, rgba(255,255,255,0.6), transparent 100%);
+/* Imagen dentro */
+.producto-card img {
+  height: 220px;
+  object-fit: contain;
+  margin-bottom: 12px;
 }
 
-/* === TIPOGRAFÍA INTERNA === */
+/* Tipografía */
 .producto-titulo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.45rem;
+  margin-bottom: 6px;
   color: var(--color-principal);
 }
 
 .producto-descripcion {
   font-family: 'Lato', sans-serif;
-  font-size: 1.05rem;
   color: var(--color-neutro);
-  line-height: 1.5;
+  font-size: 1rem;
+  margin-bottom: 12px;
 }
 
-/* === RESPONSIVE === */
+/* Precio destacado premium */
+.producto-precio {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-acento);
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .section-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
-
-  .productos-grid {
-    gap: 1.5rem;
+  .productos-section {
+    padding-top: 50px;
   }
 }

@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import M from 'materialize-css';
 
 export default function Contacto() {
+
+  useEffect(() => {
+    M.updateTextFields();
+  }, []);
 
   const enviarSimulado = (e) => {
     e.preventDefault(); 
@@ -10,7 +14,7 @@ export default function Contacto() {
     const email = document.getElementById('email').value;
     const mensaje = document.getElementById('mensaje').value;
 
-    if(!nombre || !email || !mensaje) {
+    if (!nombre || !email || !mensaje) {
       M.toast({
         html: 'Por favor completa todos los campos',
         classes: 'red darken-2'
@@ -23,7 +27,6 @@ export default function Contacto() {
       classes: 'green darken-2'
     });
 
-    // Limpiar el formulario
     document.getElementById('nombre').value = '';
     document.getElementById('email').value = '';
     document.getElementById('mensaje').value = '';
@@ -31,32 +34,41 @@ export default function Contacto() {
   };
 
   return (
-    <div className="section container">
-      <h4 className="center">Contáctanos</h4>
-      <div className="row">
-        <form className="col s12 m8 offset-m2" onSubmit={enviarSimulado}>
-          <div className="input-field">
-            <input id="nombre" type="text" className="validate" />
-            <label htmlFor="nombre">Nombre</label>
-          </div>
-          <div className="input-field">
-            <input id="email" type="email" className="validate" />
-            <label htmlFor="email">Correo</label>
-          </div>
-          <div className="input-field">
-            <textarea id="mensaje" className="materialize-textarea"></textarea>
-            <label htmlFor="mensaje">Mensaje</label>
-          </div>
-          <div className="center">
-            <button 
-              className="btn brown darken-2 waves-effect waves-light" 
-              type="submit"
-            >
-              Enviar <i className="material-icons right"></i>
-            </button>
-          </div>
-        </form>
+    <section className="contacto-section">
+      <div className="container">
+        <h2 className="contacto-titulo">Contáctanos</h2>
+        <p className="contacto-sub">
+          Estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.
+        </p>
+
+        <div className="card contacto-card">
+          <form onSubmit={enviarSimulado}>
+            <div className="input-field">
+              <input id="nombre" type="text" className="validate" />
+              <label htmlFor="nombre">Nombre</label>
+            </div>
+
+            <div className="input-field">
+              <input id="email" type="email" className="validate" />
+              <label htmlFor="email">Correo electrónico</label>
+            </div>
+
+            <div className="input-field">
+              <textarea id="mensaje" className="materialize-textarea"></textarea>
+              <label htmlFor="mensaje">Mensaje</label>
+            </div>
+
+            <div className="center">
+              <button 
+                className="btn btn-contacto waves-effect waves-light"
+                type="submit"
+              >
+                Enviar
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -8,7 +8,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Inicio from "./pages/Inicio";
-import Galeria from "./pages/Galeria";
 import Nosotros from "./pages/Nosotros";
 import Contacto from "./pages/Contacto";
 import Productos from "./pages/Productos";
@@ -23,7 +22,6 @@ function App() {
         <div className="main-content">
           <Routes>
             <Route path="/" element={<Inicio />} />
-            <Route path="/galeria" element={<Galeria />} />
             <Route path="/productos" element={<Productos />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/contacto" element={<Contacto />} />

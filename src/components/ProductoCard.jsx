@@ -37,7 +37,7 @@ export default function ProductoCard({ producto }) {
             className="btn amber darken-2 waves-effect waves-light producto-btn"
             onClick={agregarSimulado}
           >
-            Agregar 🛒
+            Agregar
           </button>
         </div>
       </div>

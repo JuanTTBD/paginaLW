@@ -1,11 +1,14 @@
 import React from "react";
 
-
 export default function Footer() {
   return (
-    <footer className="page-footer black">
-      <div className="container center-align white-text elegant-font">
-        © 2025 Estanco MalaCopa — Todos los derechos reservados
+    <footer className="footer-minimal">
+      <div className="container">
+        <p className="footer-line">
+          © 2025 <span className="footer-brand">Estanco MalaCopa</span> | 
+          <a href="#" className="footer-link"> Aviso Legal</a> • 
+          <a href="#" className="footer-link"> Política de Privacidad</a>
+        </p>
       </div>
     </footer>
   );
